@@ -32,3 +32,28 @@ buttons.forEach(btn =>{
         }
     });
 });
+document.addEventListener('keydown', (e) => {
+    const key = e.key;
+    if((key >= '0' && key <= '9') || key === '.' || key === '%' || key === '+' || key === '-' || key === '*' || key === '/'){
+        expression += key;
+        input.value = expression;
+    }
+    else if(key === 'Enter'){
+        try{
+            expression = eval(expression);
+            input.value = expression;
+        }
+        catch{
+            input.value = "error";
+            expression = "";
+        }
+    }
+    else if(key === 'Backspace'){
+        expression = expression.slice(0,-1);
+        input.value = expression;
+    }
+    else if(key.toLowerCase() === 'c'){ // clear on pressing C
+        expression = "";
+        input.value = "";
+    }
+});

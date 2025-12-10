@@ -7,6 +7,7 @@
 body{
     background-color: black;
     color: #ff6a00;
+    font-family: Arial, sans-serif;
 }
 h1{
     color: #ff6a00;
@@ -14,71 +15,96 @@ h1{
 }
 .container{
     border: 2px solid #ff6a00;
-    height: 75vh;
-    width: 30vw;
-    margin-top: 3rem;
-    display: block;
+    max-width: 400px;
+    width: 90%;
     margin: 5rem auto;
+    padding: 1rem;
     border-radius: 10px;
-}
-.calculator{
-    display: grid;
-    grid-template-columns: repeat(4,1fr);
-    grid-gap: 1rem;
-    margin: 2rem;
+    background-color: #000;
+    height: auto;
 }
 #first{
     padding: 1rem;
     text-align: right;
-    margin-top: 2rem;
-    width: 80%;
+    width: 100%;
     border-radius: 1rem;
     border: none;
     background-color: black;
     color: #ff6a00;
     font-size: 2rem;
     outline: none;
+    margin-top: 1rem;
 }
-.btn{
-    background-color: #1b1b1b;
+.calculator{
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-gap: 1rem;
+    margin: 2rem 0;
+}
+.btn, .btn1, .btn2{
     border: none;
-    height: 4rem;
-    width: 4rem;
-    color: #ff6a00;
     border-radius: 50%;
     font-size: 1.5rem;
     box-shadow: 0 0 12px rgba(255, 106, 0, 0.6);
+    transition: transform 0.2s;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.btn{
+    background-color: #1b1b1b;
+    color: #ff6a00;
+    height: 60px;
+    width: 60px;
 }
 .btn:hover{
-    cursor: pointer;
     transform: scale(1.04);
 }
 .btn1{
     background-color: #1b1b1b;
-    border: none;
-    height: 4rem;
-    width: 4rem;
     color: green;
     font-weight: bold;
-    border-radius: 50%;
-    font-size: 1.5rem;
-    box-shadow: 0 0 12px rgba(255, 106, 0, 0.6);
+    height: 60px;
+    width: 60px;
 }
 .btn1:hover{
-    cursor: pointer;
     transform: scale(1.04);
 }
 .btn2{
-    background-color:orange;
-    border: none;
-    height: 4rem;
-    width: 4rem;
+    background-color: orange;
     color: whitesmoke;
-    border-radius: 50%;
-    font-size: 1.5rem;
-    box-shadow: 0 0 12px rgba(255, 106, 0, 0.6);
+    height: 60px;
+    width: 60px;
 }
 .btn2:hover{
-    cursor: pointer;
     transform: scale(1.04);
+}
+@media (max-width: 500px){
+    #first{
+        font-size: 1.5rem;
+        padding: 0.8rem;
+    }
+    .btn, .btn1, .btn2{
+        height: 50px;
+        width: 50px;
+        font-size: 1.3rem;
+    }
+    .container{
+        margin: 3rem auto;
+    }
+}
+@media (max-width: 350px){
+    #first{
+        font-size: 1.2rem;
+        padding: 0.6rem;
+    }
+    .btn, .btn1, .btn2{
+        height: 40px;
+        width: 40px;
+        font-size: 1rem;
+    }
+    .container{
+        margin: 2rem auto;
+    }
 }
